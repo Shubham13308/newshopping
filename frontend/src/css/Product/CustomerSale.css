@@ -1,0 +1,68 @@
+/* import '../../css/Product/CustomerSale.css' */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Ensures cards wrap on smaller screens */
+  gap: 20px;
+}
+
+.fixed-card {
+  width: 200px; /* Default fixed width */
+  height: 300px; /* Default fixed height */
+  overflow: hidden; /* Ensures content doesn’t overflow the card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures even spacing inside the card */
+  border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+  border-radius: 8px; /* Optional: Rounded corners for better aesthetics */
+  background-color: #fff; /* Optional: Background color for contrast */
+}
+
+.fixed-card .card-img-top {
+  height: 100px; /* Fixed height for the image */
+  width: 100%; /* Make image span the width of the card */
+  object-fit: cover; /* Ensures image fits without distortion */
+}
+
+.fixed-card .card-body {
+  font-size: 0.9rem; /* Optional: Smaller font for compact look */
+  padding: 10px;
+  text-align: center; /* Optional: Center align text */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-container {
+    justify-content: center; /* Center align cards on smaller screens */
+    gap: 15px; /* Reduce gap for better fit */
+  }
+  .fixed-card {
+    width: 180px; /* Reduce card width */
+    height: auto; /* Allow height to adjust dynamically */
+  }
+  .fixed-card .card-img-top {
+    height: 80px; /* Reduce image height */
+  }
+  .fixed-card .card-body {
+    font-size: 0.8rem; /* Reduce font size */
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+    gap: 10px; /* Further reduce gap for very small screens */
+  }
+  .fixed-card {
+    width: 100%; /* Make cards span full width */
+    height: auto; /* Let height adjust dynamically */
+    margin: 0 10px; /* Add margin for spacing between cards and screen edge */
+  }
+  .fixed-card .card-img-top {
+    height: 60px; /* Smaller image height for compact view */
+  }
+  .fixed-card .card-body {
+    font-size: 0.7rem; /* Further reduce font size */
+    padding: 6px;
+  }
+}

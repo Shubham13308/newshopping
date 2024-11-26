@@ -1,0 +1,83 @@
+/* dashboard.css */
+.dashboard-container {
+  display: flex;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  height: 100px;
+  background-color: #fff; /* Add a background to distinguish from content */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+/* Sidebar Styles */
+.sidebar {
+  margin-top: 100px; /* Align with header height */
+  width: 298px; /* Sidebar width */
+  height: calc(100vh - 100px); /* Full height minus header */
+  position: fixed;
+  background-color: #f7f7f7; /* Background color for the sidebar */
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  overflow-y: auto; /* Scroll if content overflows */
+  scrollbar-width: thin; /* Thinner scrollbar for modern look */
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+/* Content Styles */
+.content {
+  margin-top: 100px; /* Align with header height */
+  margin-left: 298px; /* Align with sidebar width */
+  padding: 20px;
+  width: calc(100% - 298px); /* Ensure content takes the remaining width */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+      width: 220px; /* Narrower sidebar */
+  }
+
+  .content {
+      margin-left: 220px; /* Adjust based on sidebar width */
+      width: calc(100% - 220px);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+      height: 80px; /* Smaller header height */
+  }
+
+  .sidebar {
+      width: 60px; /* Compact sidebar for smaller screens */
+      margin-top: 80px; /* Adjust for smaller header height */
+  }
+
+  .content {
+      margin-left: 60px; /* Adjust for compact sidebar */
+      margin-top: 80px;
+      width: calc(100% - 60px);
+  }
+
+  .sidebar:hover {
+      width: 200px; /* Expand sidebar on hover */
+  }
+}
+
+@media (max-width: 360px) {
+  .content {
+      padding: 10px; /* Less padding for very small screens */
+  }
+}
